@@ -1,13 +1,7 @@
-/*Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.*/
-function XO(str) {
-  let array = str.split('');
-  let countX = 0;
-  let countO = 0;
-  let result = false;
-  array.forEach((letter) => {
-    if (letter.toLowerCase() == 'x') countX++;
-    if (letter.toLowerCase() == 'o') countO++;
-  });
-  if (countX == countO) result = true;
-  return result;
+/*Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.*/
+function longest(s1, s2) {
+  let array1 = s1.split('');
+  let array2 = s2.split('');
+  let result = [...array1, ...array2];
+  return Array.from(new Set(result)).sort().join('');
 }
